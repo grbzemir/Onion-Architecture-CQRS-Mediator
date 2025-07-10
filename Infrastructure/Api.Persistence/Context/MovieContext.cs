@@ -11,13 +11,14 @@ namespace Api.Persistence.Context
 {
     public class MovieContext:DbContext
     {
-        public MovieContext(DbContextOptions<MovieContext> options) : base(options)
-        {
-        }
+        //public MovieContext(DbContextOptions<MovieContext> options) : base(options)
+        //{
+        //}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=EMIR\\SQLEXPRESS;Database=MovieDb;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=EMIR\\SQLEXPRESS;Database=MovieDb;Trusted_Connection=True;TrustServerCertificate=True;");
+
 
         }
 
