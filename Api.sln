@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8A5C6CEA-2F75-4459-AA1A-CB6F23835ED3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{9D00C728-80DB-4D97-8D23-32C68E1ACB75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C1D5B62C-164B-44F2-81D9-3A1AE4B4807B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{17BEE3D3-7E12-4309-9B0C-9267BA2775E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requirements", "Requirements", "{32CC458C-7561-4D18-9F95-B6AE99AC6534}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Domain", "Core\Api.Domain\Api.Domain.csproj", "{310100BE-623B-4110-8F23-D78EE1B7A0BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{310100BE-623B-4110-8F23-D78EE1B7A0BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{310100BE-623B-4110-8F23-D78EE1B7A0BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{310100BE-623B-4110-8F23-D78EE1B7A0BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{310100BE-623B-4110-8F23-D78EE1B7A0BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{310100BE-623B-4110-8F23-D78EE1B7A0BD} = {8A5C6CEA-2F75-4459-AA1A-CB6F23835ED3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {488E7DBB-87A6-4865-A5A3-FC701BB729C1}
+	EndGlobalSection
+EndGlobal
