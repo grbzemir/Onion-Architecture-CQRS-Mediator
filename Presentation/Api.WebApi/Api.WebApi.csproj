@@ -15,10 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Api.Application\Api.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\Api.Persistence\Api.Persistence.csproj" />
   </ItemGroup>
 
