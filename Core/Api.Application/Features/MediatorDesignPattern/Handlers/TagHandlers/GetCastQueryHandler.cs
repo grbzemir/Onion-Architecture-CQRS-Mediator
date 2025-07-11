@@ -1,0 +1,32 @@
+﻿using Api.Application.Features.MediatorDesignPattern.Queries.TagQueries;
+using Api.Application.Features.MediatorDesignPattern.Results.TagResults;
+using Api.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Api.Application.Features.MediatorDesignPattern.Handlers.TagHandlers
+{
+    public class GetCastQueryHandler : IRequestHandler<GetTagQuery , List<GetTagQueryResult>>
+    {
+        private readonly MovieContext _context;
+        public GetCastQueryHandler(MovieContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<List<GetTagQueryResult>> Handle(GetTagQuery request, CancellationToken cancellationToken)
+        {
+            var values = await _context.Tags.ToListAsync();
+            return values.Select(x => new GetTagQueryResult
+            {
+                TagId = x.TagId,
+                Title = x.Title,
+            }).ToList();
+        }
+    }
+}

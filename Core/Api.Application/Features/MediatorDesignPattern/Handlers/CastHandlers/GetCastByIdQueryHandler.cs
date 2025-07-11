@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Application.Features.MediatorDesignPattern.Handlers
+namespace Api.Application.Features.MediatorDesignPattern.Handlers.CastHandlers
 {
     public class GetCastByIdQueryHandler : IRequestHandler<GetCastByIdQuery, GetCastByIdQueryResult>
     {
@@ -20,11 +20,11 @@ namespace Api.Application.Features.MediatorDesignPattern.Handlers
         }
         public async Task<GetCastByIdQueryResult> Handle(GetCastByIdQuery request, CancellationToken cancellationToken)
         {
-           var values = _context.Casts.Find(request.CastId);
+            var values = _context.Casts.Find(request.CastId);
 
-            if(values == null)
+            if (values == null)
             {
-                return null; 
+                return null;
             }
 
             return new GetCastByIdQueryResult
@@ -37,7 +37,7 @@ namespace Api.Application.Features.MediatorDesignPattern.Handlers
                 Surname = values.Surname,
                 Title = values.Title
             };
-           
+
         }
     }
 }

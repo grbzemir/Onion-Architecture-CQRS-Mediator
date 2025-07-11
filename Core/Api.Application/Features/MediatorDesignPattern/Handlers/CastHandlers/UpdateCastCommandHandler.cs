@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Application.Features.MediatorDesignPattern.Handlers
+namespace Api.Application.Features.MediatorDesignPattern.Handlers.CastHandlers
 {
     public class UpdateCastCommandHandler : IRequestHandler<UpdateCastCommand>
     {
@@ -28,7 +28,7 @@ namespace Api.Application.Features.MediatorDesignPattern.Handlers
             values.Overview = request.Overview;
             values.Biography = request.Biography;
 
-            
+
             _context.SaveChanges();
 
         }

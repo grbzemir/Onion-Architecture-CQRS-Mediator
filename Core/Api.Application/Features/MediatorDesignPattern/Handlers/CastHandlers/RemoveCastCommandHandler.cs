@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Application.Features.MediatorDesignPattern.Handlers
+namespace Api.Application.Features.MediatorDesignPattern.Handlers.CastHandlers
 {
-    public class RemoveCastCommandHandler:IRequestHandler<RemoveCastCommand>
+    public class RemoveCastCommandHandler : IRequestHandler<RemoveCastCommand>
     {
         private readonly MovieContext _context;
 

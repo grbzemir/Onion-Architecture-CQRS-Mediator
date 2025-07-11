@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Api.Application.Features.MediatorDesignPattern.Handlers
+namespace Api.Application.Features.MediatorDesignPattern.Handlers.CastHandlers
 {
     public class GetCastQueryHandler : IRequestHandler<GetCastQuery, List<GetCastQueryResult>>
     {
@@ -22,7 +22,7 @@ namespace Api.Application.Features.MediatorDesignPattern.Handlers
         public async Task<List<GetCastQueryResult>> Handle(GetCastQuery request, CancellationToken cancellationToken)
         {
             var values = await _context.Casts.ToListAsync();
-            return values.Select(x=> new GetCastQueryResult
+            return values.Select(x => new GetCastQueryResult
             {
                 CastId = x.CastId,
                 Biography = x.Biography,
@@ -32,7 +32,7 @@ namespace Api.Application.Features.MediatorDesignPattern.Handlers
                 Surname = x.Surname,
                 Title = x.Title
             }).ToList();
-            
+
         }
     }
 }
