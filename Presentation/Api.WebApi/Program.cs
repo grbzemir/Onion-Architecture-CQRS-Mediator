@@ -1,6 +1,8 @@
 using Api.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using Api.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using Api.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
 using Api.Persistence.Context;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,10 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
+
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssemblyContaining(typeof(GetTagByIdQueryHandler)) 
+);
 
 
 
