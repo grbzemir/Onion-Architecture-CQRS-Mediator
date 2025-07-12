@@ -1,4 +1,5 @@
 ﻿using Api.Application.Features.MediatorDesignPattern.Commands.CastCommands;
+using Api.Application.Features.MediatorDesignPattern.Commands.TagCommands;
 using Api.Persistence.Context;
 using MediatR;
 using System;
@@ -9,20 +10,20 @@ using System.Threading.Tasks;
 
 namespace Api.Application.Features.MediatorDesignPattern.Handlers.TagHandlers
 {
-    public class UpdateCastCommandHandler : IRequestHandler<UpdateCastCommand>
+    public class UpdateTagCommandHandler : IRequestHandler<UpdateTagCommand>
     {
         private readonly MovieContext _context;
 
-        public UpdateCastCommandHandler(MovieContext context)
+        public UpdateTagCommandHandler(MovieContext context)
         {
             _context = context;
         }
-        public async Task Handle(UpdateCastCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateTagCommand request, CancellationToken cancellationToken)
         {
-             var values = await _context.Casts.FindAsync(request.CastId);
+             var values = await _context.Tags.FindAsync(request.TagId);
              
              values.Title = request.Title;
-             await _context.SaveChangesAsync(cancellationToken);
+             await _context.SaveChangesAsync();
              
 
         }

@@ -1,6 +1,8 @@
 ﻿using Api.Application.Features.MediatorDesignPattern.Queries.TagQueries;
 using Api.Application.Features.MediatorDesignPattern.Results.TagResults;
+using Api.Domain.Entities;
 using Api.Persistence.Context;
+using Azure;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,13 @@ namespace Api.Application.Features.MediatorDesignPattern.Handlers.TagHandlers
         public async Task<GetTagByIdQueryResult> Handle(GetTagByIdQuery request, CancellationToken cancellationToken)
         {
             var values = await _context.Tags.FindAsync(request.TagId);
+
+            if (values == null)
+            {
+               
+                return null;
+            }
+
             return new GetTagByIdQueryResult
             {
                 

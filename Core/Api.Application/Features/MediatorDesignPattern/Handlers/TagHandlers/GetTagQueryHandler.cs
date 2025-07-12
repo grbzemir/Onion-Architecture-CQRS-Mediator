@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 namespace Api.Application.Features.MediatorDesignPattern.Handlers.TagHandlers
 {
-    public class GetCastQueryHandler : IRequestHandler<GetTagQuery , List<GetTagQueryResult>>
+    public class GetTagQueryHandler : IRequestHandler<GetTagQuery , List<GetTagQueryResult>>
     {
         private readonly MovieContext _context;
-        public GetCastQueryHandler(MovieContext context)
+        public GetTagQueryHandler(MovieContext context)
         {
             _context = context;
         }
