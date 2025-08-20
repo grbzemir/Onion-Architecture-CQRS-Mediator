@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Api.Domain.Entities;
+using Api.Persistence.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 namespace Api.Persistence.Context
 {
-    public class MovieContext:DbContext
+    public class MovieContext:IdentityDbContext<AppUser>
     {
         //public MovieContext(DbContextOptions<MovieContext> options) : base(options)
         //{

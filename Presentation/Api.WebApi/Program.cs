@@ -1,7 +1,12 @@
+using Api.Application.Features.CQRSDesignPattern.Commands.UserRegisterCommands;
 using Api.Application.Features.CQRSDesignPattern.Handlers.CategoryHandlers;
 using Api.Application.Features.CQRSDesignPattern.Handlers.MovieHandlers;
+using Api.Application.Features.CQRSDesignPattern.Handlers.UserRegisterHandlers;
 using Api.Application.Features.MediatorDesignPattern.Handlers.TagHandlers;
 using Api.Persistence.Context;
+using Api.Persistence.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +26,12 @@ builder.Services.AddScoped<GetMovieByIdQueryHandler>();
 builder.Services.AddScoped<CreateMovieCommandHandler>();
 builder.Services.AddScoped<UpdateMovieCommandHandler>();
 builder.Services.AddScoped<RemoveMovieCommandHandler>();
+
+
+builder.Services.AddScoped<CreateUserRegisterCommandHandler>();
+builder.Services.AddIdentity<AppUser,IdentityRole>().AddEntityFrameworkStores<MovieContext>()
+	.AddDefaultTokenProviders();
+
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssemblyContaining(typeof(GetTagByIdQueryHandler)) 
